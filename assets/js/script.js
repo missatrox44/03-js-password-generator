@@ -78,25 +78,25 @@ var user = {
 
 //If user chooses lowercase, add to pwdArray
 if (user.yesLowerCase) {
-  lowerCase.push(pwdArray);
+  pwdArray.push(lowerCase);
 }
   // console.log(pwdArray);
 
 //If user chooses uppercase, add to pwdArray
 if (user.yesUpperCase) {
-  upperCase.push(pwdArray);
+  pwdArray.push(upperCase);
 }
   // console.log(pwdArray);
 
 //If user chooses numbers, add to pwdArray
 if (user.yesNumbers) {
-  numbers.push(pwdArray);
+  pwdArray.push(numbers);
 }
   // console.log(pwdArray);
 
 //If user chooses special chracters, add to pwdArray
 if (user.yesSpecialChar) {
-  specialCharacters.push(pwdArray);
+  pwdArray.push(specialCharacters);
 }
   // console.log(pwdArray);
 } 
