@@ -9,11 +9,15 @@
   // console.log(upperCase);
   // console.log(numbers);
 
+//empty array to generate password from
+  var pwdArray = [];
+// console.log(pwdArray); 
+
 //function to validate user answers
 function userChoices() {
 //create vars to hold answer to prompt/confirm
 //prompt = length 
-let pwdLength = prompt("Type desired password length between 8-128 characters");
+var pwdLength = prompt("Type desired password length between 8-128 characters");
 // let pwdLength = prompt("Type desired password length between 8-128 characters", "8 - 128 characters");
 // console.log(pwdLength);
 if (pwdLength >= 8 && pwdLength <= 128) {
@@ -70,18 +74,7 @@ var user = {
 }
 
 // console.log(user);
-return user;
-} 
-
-
-
-function generatePassword () {
-  userChoices();
-  // var options = userChoices();
-
-//empty array to generate password from
-  var pwdArray = [];
-  // console.log(pwdArray); 
+// return user;
 
 //If user chooses lowercase, add to pwdArray
 if (user.yesLowerCase) {
@@ -106,22 +99,24 @@ if (user.yesSpecialChar) {
   specialCharacters.push(pwdArray);
 }
   // console.log(pwdArray);
+} 
 
 
-console.log(pwdArray);
-// console.log(pwdArray);
 
+function generatePassword () {
+  userChoices();
+  // var options = userChoices();
 
 //Choose random characters
 var randomCharacters = pwdArray[Math.floor(Math.random() * pwdArray.length)];
 // console.log(randomCharacters);
 
 
-//  var password =  created from randomCharacters and pwdLength
+// var password =  created from randomCharacters and pwdLength
 
-  //create a string set equal to password var
+//create a string set equal to password var
     
-  //generate random password
+//generate random password
 
 
   return password;
