@@ -11,6 +11,7 @@
 
 //function to validate user answers
 function userChoices() {
+//create vars to hold answer to prompt/confirm
 //prompt = length 
 let pwdLength = prompt("Type desired password length between 8-128 characters");
 // let pwdLength = prompt("Type desired password length between 8-128 characters", "8 - 128 characters");
@@ -21,27 +22,45 @@ if (pwdLength >= 8 && pwdLength <= 128) {
   alert("You MUST choose a number between 8-128");
   return null;
 }
+
 //confirm - lowercase, uppercase, numeric, special characters
-// if (confirm("Password length recorded!")); 
-var wantsLowerCase = confirm('change text!Your password will include lowercase letters.');
+var wantsLowerCase = confirm('Click OK to include lowercase letters or CANCEL to not include lowercase letters.');
 // console.log(wantsLowerCase);
+var wantsUpperCase = confirm('Click OK to include uppercase letters or CANCEL to not include uppercase letters.');
+// console.log(wantsUpperCase);
+var wantsNumbers = confirm('Click OK to include numbers or CANCEL to not include numbers.');
+// console.log(wantsNumbers);
+var wantsSpecialChar = confirm('Click OK to include special characters or CANCEl to not include special characters.');
+// console.log(wantsSpecialChar);
 
-//create var to hold answer to prompt/confirm
-var wantsUpperCase = confirm('Your password will include uppercase letters.');
-var wantsNumbers = confirm('Message here');
-var wantsSpecialChar = confirm('Your password will include special characters.');
-
-
+//test that choices are logged correctly - total overkill
 // if (wantsLowerCase) {
 //   console.log(wantsLowerCase);
 // } else {
 //   console.log(wantsLowerCase);
 // }
 
+// if (wantsUpperCase) {
+//   console.log(wantsUpperCase);
+// } else {
+//   console.log(wantsUpperCase);
+// }
 
 
-//list of numbers, special chars, uppercase adn lower case
-//Object
+// if (wantsNumbers) {
+//   console.log(wantsNumbers);
+// } else {
+//   console.log(wantsNumbers);
+// }
+
+
+// if (wantsSpecialChar) {
+//   console.log(wantsSpecialChar);
+// } else {
+//   console.log(wantsSpecialChar);
+// }
+
+//user choices for lowercase, uppercase, numbers, special character, pwdLength SAVED to object
 var user = {
   yesLowerCase: wantsLowerCase,
   yesUpperCase: wantsUpperCase,
@@ -49,36 +68,68 @@ var user = {
   yesSpecialChar: wantsSpecialChar,
   totalLength: pwdLength
 }
+
 // console.log(user);
 return user;
 } 
 
+
+
 function generatePassword () {
-  
-  var options = userChoices();
-    //combine all arrays
-    var pwdArray = specialCharacters.concat(lowerCase, upperCase, numbers);
-    // console.log(pwdArray);
+  userChoices();
+  // var options = userChoices();
 
-empty array possibel character
-empty array/string final pwdAr?
-guarentee choices included at least one 
-if statesm for each options- if yes option add to empty array
+//empty array to generate password from
+  var pwdArray = [];
+  // console.log(pwdArray); 
 
-    //random choose characters
-  var randomCharacters = pwdArray[Math.floor(Math.random() * pwdArray.length)];
-  // console.log(randomCharacters);
+//If user chooses lowercase, add to pwdArray
+if (user.yesLowerCase) {
+  lowerCase.push(pwdArray);
+}
+  // console.log(pwdArray);
 
-    //create a string set equal to password var
+//If user chooses uppercase, add to pwdArray
+if (user.yesUpperCase) {
+  upperCase.push(pwdArray);
+}
+  // console.log(pwdArray);
+
+//If user chooses numbers, add to pwdArray
+if (user.yesNumbers) {
+  numbers.push(pwdArray);
+}
+  // console.log(pwdArray);
+
+//If user chooses special chracters, add to pwdArray
+if (user.yesSpecialChar) {
+  specialCharacters.push(pwdArray);
+}
+  // console.log(pwdArray);
+
+
+console.log(pwdArray);
+// console.log(pwdArray);
+
+
+//Choose random characters
+var randomCharacters = pwdArray[Math.floor(Math.random() * pwdArray.length)];
+// console.log(randomCharacters);
+
+
+//  var password =  created from randomCharacters and pwdLength
+
+  //create a string set equal to password var
     
   //generate random password
-  //return password
+
 
   return password;
 }
 
 
 
+//UTA Bootcamp starter code
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
