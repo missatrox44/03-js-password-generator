@@ -123,7 +123,7 @@ for (var i = 0; i <= pwdLength; i++) {
   return password;
 }
 
-
+}
 
 
 //UTA Bootcamp starter code
