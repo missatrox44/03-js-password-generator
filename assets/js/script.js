@@ -11,6 +11,7 @@
 
 //empty array to generate password from
   var pwdArray = [];
+  var password = "";
 // console.log(pwdArray); 
 
 //function to validate user answers
@@ -108,28 +109,22 @@ function generatePassword () {
 //  var options = userChoices();
 
 // merge nested arrays in pwdArray
-// var merged = [].concat.apply([, pwdArray]);
 var merged = pwdArray.flat(1);
 // console.log(merged);
 
-//Choose random characters
-// var randomCharacters = pwdArray[Math.floor(Math.random() * pwdArray.length)];
+//Choose random character
+// var randomCharacters = merged[Math.floor(Math.random() * merged.length)];
+var randomCharacters = ;
 // console.log(randomCharacters);
-var randomCharacters = merged[Math.floor(Math.random() * merged.length)];
-console.log(randomCharacters);
 
-
-// var password is created from options, randomCharacters and pwdLength
-// var password = pwdArray.concat(randomCharacters);
-// console.log(password);
-
-//create a string set equal to password var
-    
-//generate random password
-
-
+//generate random password with pwdLength
+for (var i = 0; i <= pwdLength; i++) {
+  var password = Math.floor(Math.random() * merged.length);
+  password += merged.substring(randomNumber, randomNumber +1);
+  
   return password;
 }
+
 
 
 
@@ -148,4 +143,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
