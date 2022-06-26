@@ -9,9 +9,10 @@
   // console.log(upperCase);
   // console.log(numbers);
 
-//empty array to generate password from
+//empty vars to generate password from
   var pwdArray = [];
   var password = "";
+  var pwdLength = 0;
 // console.log(pwdArray); 
 
 //function to validate user answers
@@ -109,6 +110,8 @@ function generatePassword () {
 // merge nested arrays in pwdArray
 var merged = pwdArray.flat(1);
 // console.log(merged);
+//convert array to string
+let mergedString = merged.join();
 
 //Choose random character
 // var randomCharacters = merged[Math.floor(Math.random() * merged.length)];
@@ -117,8 +120,8 @@ var randomCharacters = "";
 
 //generate random password with pwdLength and randomCharacters
 for (var i = 0; i <= pwdLength; i++) {
-  var randomCharacters = Math.floor(Math.random() * merged.length);
-  password += merged.substring(randomCharacters, randomCharacters +1);
+  var randomCharacters = Math.floor(Math.random() * mergedString.length);
+  password += mergedString.substring(randomCharacters, randomCharacters +1);
   
   return password;
 }
