@@ -102,8 +102,6 @@ if (user.yesSpecialChar) {
   // console.log(pwdArray);
 } 
 
-
-
 function generatePassword () {
   userChoices();
 //  var options = userChoices();
@@ -114,13 +112,13 @@ var merged = pwdArray.flat(1);
 
 //Choose random character
 // var randomCharacters = merged[Math.floor(Math.random() * merged.length)];
-var randomCharacters = ;
+var randomCharacters = "";
 // console.log(randomCharacters);
 
-//generate random password with pwdLength
+//generate random password with pwdLength and randomCharacters
 for (var i = 0; i <= pwdLength; i++) {
-  var password = Math.floor(Math.random() * merged.length);
-  password += merged.substring(randomNumber, randomNumber +1);
+  var randomCharacters = Math.floor(Math.random() * merged.length);
+  password += merged.substring(randomCharacters, randomCharacters +1);
   
   return password;
 }
