@@ -28,13 +28,13 @@ if (pwdLength >= 8 && pwdLength <= 128) {
 }
 
 //confirm - lowercase, uppercase, numeric, special characters
-var wantsLowerCase = confirm('Click OK to include lowercase letters or CANCEL to not include lowercase letters.');
+var wantsLowerCase = confirm('Click OK to include lowercase letters or CANCEL to omit lowercase letters.');
 // console.log(wantsLowerCase);
-var wantsUpperCase = confirm('Click OK to include uppercase letters or CANCEL to not include uppercase letters.');
+var wantsUpperCase = confirm('Click OK to include uppercase letters or CANCEL to omit uppercase letters.');
 // console.log(wantsUpperCase);
-var wantsNumbers = confirm('Click OK to include numbers or CANCEL to not include numbers.');
+var wantsNumbers = confirm('Click OK to include numbers or CANCEL to omit numbers.');
 // console.log(wantsNumbers);
-var wantsSpecialChar = confirm('Click OK to include special characters or CANCEl to not include special characters.');
+var wantsSpecialChar = confirm('Click OK to include special characters or CANCEl to omit special characters.');
 // console.log(wantsSpecialChar);
 
 //test that choices are logged correctly - total overkill
@@ -105,14 +105,23 @@ if (user.yesSpecialChar) {
 
 function generatePassword () {
   userChoices();
-  // var options = userChoices();
+//  var options = userChoices();
+
+// merge nested arrays in pwdArray
+// var merged = [].concat.apply([, pwdArray]);
+var merged = pwdArray.flat(1);
+// console.log(merged);
 
 //Choose random characters
-var randomCharacters = pwdArray[Math.floor(Math.random() * pwdArray.length)];
+// var randomCharacters = pwdArray[Math.floor(Math.random() * pwdArray.length)];
 // console.log(randomCharacters);
+var randomCharacters = merged[Math.floor(Math.random() * merged.length)];
+console.log(randomCharacters);
 
 
-// var password =  created from randomCharacters and pwdLength
+// var password is created from options, randomCharacters and pwdLength
+// var password = pwdArray.concat(randomCharacters);
+// console.log(password);
 
 //create a string set equal to password var
     
