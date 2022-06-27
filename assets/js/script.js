@@ -1,25 +1,19 @@
  // Assignment code here
-  //array
+  //character types array
   var specialCharacters = ["!", "", "#", "$", "%", "&", " ' ", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
   var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  // console.log(specialCharacters);
-  // console.log(lowerCase);
-  // console.log(upperCase);
-  // console.log(numbers);
 
 //empty vars to generate password from
   var pwdArray = [];
   var password = "";
   var pwdLength = 0;
-// console.log(pwdArray); 
 
 //function to validate user answers
 function userChoices() {
 //create vars to hold answer to prompt/confirm
-//prompt = length 
-var pwdLength = prompt("Type desired password length between 8-128 characters");
+pwdLength = prompt("Type desired password length between 8-128 characters");
 // let pwdLength = prompt("Type desired password length between 8-128 characters", "8 - 128 characters");
 // console.log(pwdLength);
 if (pwdLength >= 8 && pwdLength <= 128) {
@@ -46,26 +40,6 @@ var wantsSpecialChar = confirm('Click OK to include special characters or CANCEl
 //   console.log(wantsLowerCase);
 // }
 
-// if (wantsUpperCase) {
-//   console.log(wantsUpperCase);
-// } else {
-//   console.log(wantsUpperCase);
-// }
-
-
-// if (wantsNumbers) {
-//   console.log(wantsNumbers);
-// } else {
-//   console.log(wantsNumbers);
-// }
-
-
-// if (wantsSpecialChar) {
-//   console.log(wantsSpecialChar);
-// } else {
-//   console.log(wantsSpecialChar);
-// }
-
 //user choices for lowercase, uppercase, numbers, special character, pwdLength SAVED to object
 var user = {
   yesLowerCase: wantsLowerCase,
@@ -74,9 +48,8 @@ var user = {
   yesSpecialChar: wantsSpecialChar,
   totalLength: pwdLength
 }
-
 // console.log(user);
-// return user;
+
 
 //If user chooses lowercase, add to pwdArray
 if (user.yesLowerCase) {
@@ -101,31 +74,35 @@ if (user.yesSpecialChar) {
   pwdArray.push(specialCharacters);
 }
   // console.log(pwdArray);
+  //check to see if anything in pwdArray if not, alert user call function userChoices
 } 
 
 function generatePassword () {
   userChoices();
-//  var options = userChoices();
 
 // merge nested arrays in pwdArray
 var merged = pwdArray.flat(1);
 console.log(merged);
-//convert array to string
-let mergedString = merged.join();
+
+// //convert array to string
+// let mergedString = merged.join("");
 // console.log(mergedString);
+
 //Choose random character
-// var randomCharacters = merged[Math.floor(Math.random() * merged.length)];
 var randomCharacters = "";
 // console.log(randomCharacters);
 
 //generate random password with pwdLength and randomCharacters
 for (var i = 0; i <= pwdLength; i++) {
-  var randomCharacters = Math.floor(Math.random() * mergedString.length);
-  password += mergedString.substring(randomCharacters, randomCharacters +1);
+  var randomCharacters = Math.floor(Math.random() * merged.length);
   
-  return password;
+  // password += mergedString.substring(randomCharacters, randomCharacters +1);
+  // password += mergedString[randomCharacters];
+    password += merged[randomCharacters];
+console.log(randomCharacters);
 }
-
+return password;
+console.log(password);
 }
 
 

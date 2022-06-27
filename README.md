@@ -40,7 +40,6 @@ JavaScript Random Password Generator
 
 ## Bugs
 
-* Program produces one random character as output
 * Need to ensure that at least one character type should be selected from each character array
 
 ## Second Set of Eyes
