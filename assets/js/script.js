@@ -93,7 +93,7 @@ var randomCharacters = "";
 // console.log(randomCharacters);
 
 //generate random password with pwdLength and randomCharacters
-for (var i = 0; i <= pwdLength; i++) {
+for (var i = 0; i <= pwdLength-1; i++) {
   var randomCharacters = Math.floor(Math.random() * merged.length);
   
   // password += mergedString.substring(randomCharacters, randomCharacters +1);
