@@ -7,13 +7,17 @@
 
 ---
 ## How it works
+Go to deployed website and click the "Generate Password" button to start the program.
+![Step-1 Screenshot](./assets/images/step-1.png)<br><br>
+Enter desired length of password between 8-128 then click OK. Any numerical values outside of this range will end prompts and user will have to start over.
+![Step-2 Screenshot](./assets/images/step-2.png)<br><br>
+User will be asked to include lowercase letters, uppercase letters, numbers and special characters. User must click OK to include these characters or CANCEL to omit characters.
+![Step-3 Screenshot](./assets/images/step-3.png)<br><br>
+A randomly generated password will be displayed in the box with the dashed border. 
+![Step-4 Screenshot](./assets/images/step-4.png)<br><br>
 
-![Detailed Screenshots]()
-![Detailed Screenshots]()
-![Detailed Screenshots]()
 
-
-## Criteria
+<!-- ## Criteria
 
 JavaScript Random Password Generator
 * GIVEN I need a new, secure password
@@ -31,24 +35,23 @@ JavaScript Random Password Generator
 * THEN a password is generated that matches the selected criteria
 * WHEN the password is generated
 * THEN the password is either displayed in an alert or written to the page
-
+ -->
 
 
 ## Bugs
 
-* Hopefully none
+* Program produces one random character as output
+* Need to ensure that at least one character type should be selected from each character array
 
-
+## Second Set of Eyes
+[Jeffrey Littleton](https://github.com/littletonjeffrey)<br>
+Aaron Anglin
 
 ## Resources
 
 * reset.css file reproduced from UT Austin Bootcamp Curriculum.<br>
 * For loop modified from [Foolish Developer](https://dev.to/code_mystery)
 * Starter HTML & CSS code provided by UT Austin Bootcamp Curriculum
-
-
-## Site Preview 
-![Site Screenshot]()
 
 
 ## MIT License

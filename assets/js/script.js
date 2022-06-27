@@ -109,10 +109,10 @@ function generatePassword () {
 
 // merge nested arrays in pwdArray
 var merged = pwdArray.flat(1);
-// console.log(merged);
+console.log(merged);
 //convert array to string
 let mergedString = merged.join();
-
+// console.log(mergedString);
 //Choose random character
 // var randomCharacters = merged[Math.floor(Math.random() * merged.length)];
 var randomCharacters = "";
