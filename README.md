@@ -40,7 +40,8 @@ JavaScript Random Password Generator
 
 ## Bugs
 
-* Need to ensure that at least one character type should be selected from each character array
+* Need to ensure that at least one character type should be selected from each character array user includes
+* Final password is an extra character length than user requested
 
 ## Second Set of Eyes
 [Jeffrey Littleton](https://github.com/littletonjeffrey)<br>
