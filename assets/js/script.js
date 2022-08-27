@@ -16,11 +16,8 @@ function userChoices() {
 pwdLength = prompt("Type desired password length between 8-128 characters");
 // let pwdLength = prompt("Type desired password length between 8-128 characters", "8 - 128 characters");
 // console.log(pwdLength);
-if (pwdLength >= 8 && pwdLength <= 128) {
-  if (confirm("Password length recorded!")); 
-} else {
-  alert("You MUST choose a number between 8-128");
-  return null;
+while (pwdLength <= 8 || pwdLength >= 128 || isNaN(pwdLength)) {
+  pwdLength = prompt("Type desired password length between 8-128 characters")
 }
 
 //confirm - lowercase, uppercase, numeric, special characters
@@ -30,7 +27,7 @@ var wantsUpperCase = confirm('Click OK to include uppercase letters or CANCEL to
 // console.log(wantsUpperCase);
 var wantsNumbers = confirm('Click OK to include numbers or CANCEL to omit numbers.');
 // console.log(wantsNumbers);
-var wantsSpecialChar = confirm('Click OK to include special characters or CANCEl to omit special characters.');
+var wantsSpecialChar = confirm('Click OK to include special characters or CANCEL to omit special characters.');
 // console.log(wantsSpecialChar);
 
 //test that choices are logged correctly - total overkill
@@ -78,31 +75,31 @@ if (user.yesSpecialChar) {
 } 
 
 function generatePassword () {
-  userChoices();
+    userChoices();
 
-// merge nested arrays in pwdArray
-var merged = pwdArray.flat(1);
-console.log(merged);
+  // merge nested arrays in pwdArray
+  var merged = pwdArray.flat(1);
+  console.log(merged);
 
-// //convert array to string
-// let mergedString = merged.join("");
-// console.log(mergedString);
+  // //convert array to string
+  // let mergedString = merged.join("");
+  // console.log(mergedString);
 
-//Choose random character
-var randomCharacters = "";
-// console.log(randomCharacters);
+  //Choose random character
+  var randomCharacters = "";
+  // console.log(randomCharacters);
 
-//generate random password with pwdLength and randomCharacters
-for (var i = 0; i <= pwdLength-1; i++) {
-  var randomCharacters = Math.floor(Math.random() * merged.length);
-  
-  // password += mergedString.substring(randomCharacters, randomCharacters +1);
-  // password += mergedString[randomCharacters];
-    password += merged[randomCharacters];
-console.log(randomCharacters);
-}
-return password;
-console.log(password);
+  //generate random password with pwdLength and randomCharacters
+  for (var i = 0; i <= pwdLength-1; i++) {
+    var randomCharacters = Math.floor(Math.random() * merged.length);
+    
+    // password += mergedString.substring(randomCharacters, randomCharacters +1);
+    // password += mergedString[randomCharacters];
+      password += merged[randomCharacters];
+  console.log(randomCharacters);
+  }
+  return password;
+  console.log(password);
 }
 
 
@@ -113,6 +110,10 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log(password);
+  if (!password) {
+    password = 'Your secure password'
+  }
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
